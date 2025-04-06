@@ -1,0 +1,18 @@
+h2 {
+    color: #007acc;
+  }
+  
+  p {
+    font-size: 16px;
+  }
+  
+  ul {
+    margin-left: 20px;
+  }
+  
+  a {
+    color: #007acc;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
