@@ -2,11 +2,9 @@
 
 <input [(ngModel)]="nome" placeholder="Digite o nome do aluno" />
 <p>Nome digitado: {{ nome }}</p>
-
 <button (click)="salvarAluno()">Salvar</button>
 
-<p *ngIf="listas.length === 0">Nenhum aluno cadastrado</p>
+<hr />
 
-<ul>
-  <li *ngFor="let aluno of listas">{{ aluno }}</li>
-</ul>
+<!-- Novo componente compartilhado -->
+<app-lista></app-lista>

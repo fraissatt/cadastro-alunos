@@ -1,21 +1,24 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { AlunoService } from '../services/aluno.service';
+import { ListaComponent } from '../lista/lista.component';
 
 @Component({
   selector: 'app-formulario',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, ListaComponent],
   templateUrl: './formulario.component.html',
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent {
   nome: string = '';
-  listas: string[] = [];
+
+  constructor(private alunoService: AlunoService) {}
 
   salvarAluno() {
     if (this.nome.trim()) {
-      this.listas.push(this.nome.trim());
+      this.alunoService.adicionarAluno(this.nome.trim());
       this.nome = '';
     }
   }
